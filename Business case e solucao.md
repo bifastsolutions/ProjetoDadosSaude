@@ -13,12 +13,11 @@ em diferentes estados prejudica a capacidade da empresa de responder eficazmente
 
 ## Indicadores
 
-- Qual é o faturamento mensal da concessionária de veículos?
-- Qual é a taxa de devolução por modelo de veículo?
-- Qual é o ticket médio das vendas de veículos no último mês?
-- Quantas unidades de veículos foram vendidas no último ano?
-- Qual é o faturamento da concessionária em relação à meta estabelecida para o mês?
-- Qual é o modelo de veículo com o maior número de vendas no último ano?
+- Qual é o total de casos de Covid por estado?
+- Qual é a taxa de ocupação  por estado e tipo de leito?
+- Qual é a taxa de suspeitos e confirmados?
+- Qual a quantidade e taxa de obitos de suspeitos e confirmados?
+- Qual é a cidade e o estado mais e menos afetada?
 
 ## Benefícios(valor) esperado pelo cliente
 
