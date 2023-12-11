@@ -45,7 +45,28 @@ em diferentes estados prejudica a capacidade da empresa de responder eficazmente
 
 ![Arquitetura Projeto Databricks - Saúde](https://github.com/bifastsolutions/ProjetoConcessionaria/assets/134235178/590a4afe-66c7-42fb-91bb-e9210339b6c1)
 
-# Gitlab
+#Git e Gitlab
+
+## Git
+
+O git possui comandos que você usa para interagir com seus arquivos, é um sistema de controle de versão muito útil para acompanhar as mudanças em seus arquivos ao longo do tempo, ele mantém o controle das diferentes versões dos seus documentos, permitindo que você veja o que mudou, quando mudou e até mesmo voltar no tempo, se necessário.
+
+Os principais comandos que utilizo nesse projeto são:
+
+- git init: Este comando é usado para iniciar um repositório Git em um diretório. Ele cria um novo repositório Git ou transforma um diretório existente em um repositório Git.
+- git add: Este comando adiciona arquivos ao "staging area", que é onde você prepara os arquivos para serem confirmados (ou "commitados") no Git.
+  Por exemplo, se você alterou um arquivo chamado "script.py", você usaria git add script.py para adicionar essa mudança ao staging area.
+- git commit: Este comando é usado para confirmar as mudanças feitas nos arquivos que estão no staging area. Cada commit cria um ponto na linha do tempo do seu projeto, permitindo que você acompanhe as alterações.
+- git push: Quando você está trabalhando com um repositório remoto (como no GitHub, GitLab, etc.), o git push é usado para enviar suas alterações confirmadas para o repositório remoto.
+- git branch: O Git permite que você trabalhe em diferentes "ramificações" do seu projeto. O git branch é usado para listar, criar ou excluir ramificações.
+- git merge: Após trabalhar em ramificações separadas, o git merge é usado para combinar as alterações de uma ramificação em outra.
+- git status: Este comando mostra o estado atual do seu repositório Git. Ele exibe informações sobre quais arquivos estão no staging area, quais foram modificados e ainda não foram adicionados, entre outros detalhes.
+- git remote: Esse comando é como uma ponte entre o seu repositório local e um repositório remoto (como GitHub, GitLab, etc.). O repositório remoto é como uma versão online do seu projeto, onde você pode compartilhar seu 
+  trabalho com outras pessoas.
+- git checkout> Esse comando é como trocar de canal na TV. É uma forma de mudar para uma ramificação diferente do seu projeto, permitindo que você trabalhe em áreas separadas sem bagunçar uma com a outra.  
+  
+
+## Gitlab
 
 O GitLab desempenha um papel crucial no gerenciamento de projetos de dados, oferecendo um repositório centralizado para controle de versionamento. Ele permite armazenar scripts essenciais, como os do Terraform para configuração na AWS e do Databricks para manipulação de dados. Com o GitLab, equipes podem colaborar, rastrear e revisar alterações de código, garantindo consistência e permitindo a implementação ágil de novas funcionalidades, mantendo um registro detalhado de todas as mudanças e facilitando a colaboração entre os membros do time.
 
