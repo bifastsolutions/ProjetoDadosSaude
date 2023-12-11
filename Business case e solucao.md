@@ -78,3 +78,7 @@ O GitLab desempenha um papel crucial no gerenciamento de projetos de dados, ofer
 Nesse projeto em específico foi utulizado o VS code para trabalhar com a criação de scripts em pyspark e terraform para ser utilizado dentro do projeto, após a construção do código através do Git,
 os códigos eram enviados para uma branch Dev, enviados para o gitlab e após ter sua versão final era feito um merge para a branch de produção (como trabalho sozinho no projeto, 2 branchs foram suficientes
 para a organização).
+
+![Exemplo de comandos Git no projeto](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/fcfeeab0-7dfe-4f7b-a0f2-aedefe4aeb57)
+
+
