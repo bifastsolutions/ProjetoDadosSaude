@@ -63,8 +63,11 @@ Os principais comandos que utilizo nesse projeto são:
 - git status: Este comando mostra o estado atual do seu repositório Git. Ele exibe informações sobre quais arquivos estão no staging area, quais foram modificados e ainda não foram adicionados, entre outros detalhes.
 - git remote: Esse comando é como uma ponte entre o seu repositório local e um repositório remoto (como GitHub, GitLab, etc.). O repositório remoto é como uma versão online do seu projeto, onde você pode compartilhar seu 
   trabalho com outras pessoas.
-- git checkout> Esse comando é como trocar de canal na TV. É uma forma de mudar para uma ramificação diferente do seu projeto, permitindo que você trabalhe em áreas separadas sem bagunçar uma com a outra.  
-  
+- git checkout> Esse comando é como trocar de canal na TV. É uma forma de mudar para uma ramificação diferente do seu projeto, permitindo que você trabalhe em áreas separadas sem bagunçar uma com a outra.
+
+   
+  ![Funcionamento GIT e suas camadas](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/d4cfb18a-a018-4760-a918-d7fe7a6e21cd)
+
 
 ## Gitlab
 
