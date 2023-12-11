@@ -81,4 +81,8 @@ para a organização).
 
 ![Exemplo de comandos Git no projeto](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/fcfeeab0-7dfe-4f7b-a0f2-aedefe4aeb57)
 
+# Terraform
 
+O Terraform é...
+
+## principais Scripts terraform
