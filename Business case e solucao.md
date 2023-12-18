@@ -89,3 +89,23 @@ para a organização).
 O Terraform é uma ferramenta poderosa para orquestrar infraestrutura como código(IaC). Na AWS, ele será utilizado para automatizar a criação e gerenciamento de recursos, permitindo uma abordagem eficiente e consistente para provisionar serviços na nuvem. Estou usando ele para criar dois tipos de usuários na AWS: um que vai ter o controle como governança de dados, mexendo com várias coisas como IAM, SQS, SNS, criando e fazendo backup de buckets no S3, entre outras coisas. O outro usuário é mais limitado, só consegue ler os arquivos dos Buckets no S3 e executar containers específicos no ECS, onde usamos o Airflow e o Airbyte separados. Com isso,conseguimos ter um usuário para cada função não deixando acesso FULL para nenhum deles, usando um dos conceitos mais importantes em cloud do princípio do menor previlégio. E o terraform facilita esse controle de criação de serviços via código, onde eu não dependo da interface gráfica, podendo fazer manitenção de tudo que acontece na AWS de forma simples e prática por exemplo alterando, excluindo ou adicionando linhas no código.
 
 ## principais Scripts terraform
+
+Todos os scripts utilizam 3 comandos básicos no terraform atravbés do vscode:
+
+- Terraform init. Isso inicializa o Terraform e baixa os plugins necessários.
+  
+![WhatsApp Image 2023-12-18 at 19 57 49](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/6048613f-1505-471e-8c0a-0efaefc63606)
+
+-  Terraform plan para verificar quais recursos serão criados, modificados ou removidos. (É opcional, mas interessante utilizar para ter certeza do que será executado)
+
+![WhatsApp Image 2023-12-18 at 19 59 51](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/2d3abee7-db73-40b1-bc7d-d8ecfbb73ecb)
+
+- Terraform apply para aplicar as mudanças definidas no código Terraform.
+
+![WhatsApp Image 2023-12-18 at 20 02 22](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/8b1863a8-3aca-4304-b7fa-abf1a650b77d)
+
+
+
+# Criação de usuário user_aws_governance
+
+
