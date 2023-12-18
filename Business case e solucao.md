@@ -108,4 +108,121 @@ Todos os scripts utilizam 3 comandos básicos no terraform atravbés do vscode:
 
 # Criação de usuário user_aws_governance
 
+```terraform
+provider "aws" {
+  region = "us-west-2" # Substitua pela sua região desejada
+}
 
+resource "aws_iam_user" "user_aws_governance" {
+  name = "user_aws_governance"
+}
+
+resource "aws_iam_policy" "policy_aws_governance" {
+  name        = "policy_aws_governance"
+  description = "Policy for AWS governance user"
+  
+  policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Effect   = "Allow",
+        Action   = [
+          "s3:CreateBucket",
+          "s3:DeleteBucket",
+          "s3:ListBucket",
+          "s3:GetBucketLocation",
+          "s3:GetBucketPolicy",
+          "s3:GetObject",
+          "s3:PutObject",
+          "s3:DeleteObject",
+          "s3:GetObjectVersion",
+          "s3:PutObjectAcl"
+        ],
+        Resource = ["arn:aws:s3:::*", "arn:aws:s3:::*/*"]
+      },
+      {
+        Effect   = "Allow",
+        Action   = [
+          "ecs:ListTasks",
+          "ecs:DescribeTasks",
+          "ecs:DescribeTaskDefinition",
+          "ecs:DescribeContainerInstances",
+          "ecs:RunTask",
+          "ecs:DeleteTask"
+        ],
+        Resource = ["*"]
+      },
+      {
+        Effect   = "Allow",
+        Action   = [
+          "sqs:ListQueues",
+          "sqs:GetQueueAttributes",
+          "sqs:ReceiveMessage",
+          "sqs:CreateQueue",
+          "sqs:DeleteQueue"
+        ],
+        Resource = ["*"]
+      },
+      {
+        Effect   = "Allow",
+        Action   = [
+          "sns:ListTopics",
+          "sns:GetTopicAttributes",
+          "sns:Publish",
+          "sns:CreateTopic",
+          "sns:DeleteTopic"
+        ],
+        Resource = ["*"]
+      },
+      {
+        Effect   = "Allow",
+        Action   = [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+        ],
+        Resource = ["arn:aws:logs:*:*:*"]
+      },
+      {
+        Effect   = "Allow",
+        Action   = [
+          "lambda:ListFunctions",
+          "lambda:GetFunction",
+          "lambda:InvokeFunction",
+          "lambda:CreateFunction",
+          "lambda:DeleteFunction"
+        ],
+        Resource = ["*"]
+      },
+      {
+        Effect   = "Allow",
+        Action   = [
+          "ce:GetCostAndUsage"
+        ],
+        Resource = ["*"]
+      },
+      {
+        Effect   = "Allow",
+        Action   = [
+          "budgets:ViewBudget",
+          "budgets:ModifyBudget"
+        ],
+        Resource = ["*"]
+      }
+    ]
+  })
+}
+
+resource "aws_iam_user_policy_attachment" "attachment_aws_governance" {
+  user       = aws_iam_user.user_aws_governance.name
+  policy_arn = aws_iam_policy.policy_aws_governance.arn
+
+}
+```
+![WhatsApp Image 2023-12-18 at 20 04 35](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/0912bc32-d984-4bf4-bf7b-a35a2130abc5)
+
+
+![WhatsApp Image 2023-12-18 at 20 01 57](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/ceeea5df-1527-4370-9d29-192ceffcdb0a)
+
+
+![WhatsApp Image 2023-12-18 at 20 03 51](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/382f581b-4d6c-43ad-b9b4-9110ee25c354)
