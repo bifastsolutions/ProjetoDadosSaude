@@ -90,6 +90,8 @@ O Terraform é uma ferramenta poderosa para orquestrar infraestrutura como códi
 
 ## principais Scripts terraform
 
+#Irei listar apenas alguns códigos para que o projeto aqui não fique grande demais#
+
 Todos os scripts utilizam 3 comandos básicos no terraform atravbés do vscode:
 
 - Terraform init. Isso inicializa o Terraform e baixa os plugins necessários.
@@ -219,10 +221,41 @@ resource "aws_iam_user_policy_attachment" "attachment_aws_governance" {
 
 }
 ```
-![WhatsApp Image 2023-12-18 at 20 04 35](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/0912bc32-d984-4bf4-bf7b-a35a2130abc5)
+
+### Detalhes
+
+provider "aws" { region = "us-west-2" }: Esta linha define o provedor que o Terraform usará para interagir com a AWS, indicando a região onde os recursos serão criados.
+
+resource "aws_iam_user" "user_aws_governance" { name = "user_aws_governance" }: Aqui, um recurso do tipo aws_iam_user é criado. Ele representa um usuário no IAM (Identity and Access Management) da AWS, com o nome "user_aws_governance".
+
+resource "aws_iam_policy" "policy_aws_governance" { ... }: Este trecho define uma política no IAM chamada "policy_aws_governance". Essa política contém as permissões que serão associadas ao usuário criado anteriormente.
+
+Dentro do bloco da política (policy = jsonencode({ ... })), cada seção Statement define uma permissão específica:
+
+S3: Permite operações relacionadas aos Buckets do S3, como criação, exclusão, leitura e gravação de objetos. No caso, são permitidas ações em todos os Buckets (arn:aws:s3:::*) e seus objetos (arn:aws:s3:::*/*).
+
+ECS: Concede permissões para listar, descrever, criar e excluir tarefas e containers no ECS.
+
+SQS: Permite listar, obter atributos, receber mensagens, criar e excluir filas no SQS.
+
+SNS: Fornece autorização para listar tópicos, obter atributos, publicar mensagens, criar e excluir tópicos no SNS.
+
+Logs: Permite a criação de grupos de logs, streams de logs e a inserção de eventos de log.
+
+Lambda: Concede permissões para listar, obter, invocar, criar e excluir funções do Lambda.
+
+Cost Explorer e Budgets: Oferece permissões para visualizar e modificar orçamentos no AWS Budgets e acessar informações de custos no Cost Explorer.
+
+resource "aws_iam_user_policy_attachment" "attachment_aws_governance" { ... }: Por fim, esta seção associa a política criada ao usuário previamente definido. Isso efetivamente concede ao usuário as permissões especificadas na política
 
 
-![WhatsApp Image 2023-12-18 at 20 01 57](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/ceeea5df-1527-4370-9d29-192ceffcdb0a)
+![Usuário](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/0912bc32-d984-4bf4-bf7b-a35a2130abc5)
+
+![Politica](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/382f581b-4d6c-43ad-b9b4-9110ee25c354)
+
+![Pewrmissões da política](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/4dfb9854-010b-41ee-8878-e72fc1f5e813)
 
 
-![WhatsApp Image 2023-12-18 at 20 03 51](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/382f581b-4d6c-43ad-b9b4-9110ee25c354)
+
+
+
