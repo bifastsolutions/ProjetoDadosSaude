@@ -248,10 +248,9 @@ Cost Explorer e Budgets: Oferece permissões para visualizar e modificar orçame
 
 resource "aws_iam_user_policy_attachment" "attachment_aws_governance" { ... }: Por fim, esta seção associa a política criada ao usuário previamente definido. Isso efetivamente concede ao usuário as permissões especificadas na política
 
+![Usuario](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/382f581b-4d6c-43ad-b9b4-9110ee25c354)
 
-![Usuário](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/0912bc32-d984-4bf4-bf7b-a35a2130abc5)
-
-![Politica](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/382f581b-4d6c-43ad-b9b4-9110ee25c354)
+![Politica](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/0912bc32-d984-4bf4-bf7b-a35a2130abc5)
 
 ![Pewrmissões da política](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/4dfb9854-010b-41ee-8878-e72fc1f5e813)
 
