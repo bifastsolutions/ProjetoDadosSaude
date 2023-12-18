@@ -83,6 +83,9 @@ para a organização).
 
 # Terraform
 
+![1-0XID8x0ak2xAqA3vt68BHg](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/b19f19a7-07b8-4ef1-8246-441e08bcd0a8)
+
+
 O Terraform é uma ferramenta poderosa para orquestrar infraestrutura como código(IaC). Na AWS, ele será utilizado para automatizar a criação e gerenciamento de recursos, permitindo uma abordagem eficiente e consistente para provisionar serviços na nuvem. Estou usando ele para criar dois tipos de usuários na AWS: um que vai ter o controle como governança de dados, mexendo com várias coisas como IAM, SQS, SNS, criando e fazendo backup de buckets no S3, entre outras coisas. O outro usuário é mais limitado, só consegue ler os arquivos dos Buckets no S3 e executar containers específicos no ECS, onde usamos o Airflow e o Airbyte separados. Com isso,conseguimos ter um usuário para cada função não deixando acesso FULL para nenhum deles, usando um dos conceitos mais importantes em cloud do princípio do menor previlégio. E o terraform facilita esse controle de criação de serviços via código, onde eu não dependo da interface gráfica, podendo fazer manitenção de tudo que acontece na AWS de forma simples e prática por exemplo alterando, excluindo ou adicionando linhas no código.
 
 ## principais Scripts terraform
