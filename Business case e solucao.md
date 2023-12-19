@@ -345,8 +345,7 @@ resource "aws_s3_bucket_versioning" "saude_project_gold_versioning" {
 
 ![Versionamento e Tags](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/b47ecd16-44fa-4804-be97-2c100fe88cd1)
 
-### Detalhes
 
-Como podem obeervar os buckets forma criados todos ao mesmo tempo em segundos já com as configurações, também poderiam ter sido adicionadas lifecycle rules ou outras configurações da minha escolha, tudo via terraform,
+Como podem observar os buckets forma criados todos ao mesmo tempo em segundos já com as configurações, também poderiam ter sido adicionadas lifecycle rules ou outras configurações da minha escolha, tudo via terraform.
 
 
