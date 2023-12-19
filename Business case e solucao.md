@@ -98,7 +98,8 @@ Todos os scripts utilizam 3 comandos básicos no terraform atravbés do vscode:
   
 ![WhatsApp Image 2023-12-18 at 19 57 49](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/6048613f-1505-471e-8c0a-0efaefc63606)
 
--  Terraform plan para verificar quais recursos serão criados, modificados ou removidos. (É opcional, mas interessante utilizar para ter certeza do que será executado)
+-  Terraform plan para verificar quais recursos serão criados, modificados ou removidos. (É opcional, mas interessante utilizar para ter certeza do que será executado, e você também será capaz de ver se os recursos
+já existem na AWS e caso sejam alterações o codigo terraform informa essas modificações)
 
 ![WhatsApp Image 2023-12-18 at 19 59 51](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/2d3abee7-db73-40b1-bc7d-d8ecfbb73ecb)
 
@@ -111,8 +112,9 @@ Todos os scripts utilizam 3 comandos básicos no terraform atravbés do vscode:
 ## Criação de usuário user_aws_governance
 
 ```terraform
+
 provider "aws" {
-  region = "us-west-2" # Substitua pela sua região desejada
+  region = "us-west-2" 
 }
 
 resource "aws_iam_user" "user_aws_governance" {
@@ -252,9 +254,99 @@ resource "aws_iam_user_policy_attachment" "attachment_aws_governance" { ... }: P
 
 ![Politica](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/0912bc32-d984-4bf4-bf7b-a35a2130abc5)
 
-![Pewrmissões da política](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/4dfb9854-010b-41ee-8878-e72fc1f5e813)
+![Permissões da política](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/4dfb9854-010b-41ee-8878-e72fc1f5e813)
+
+## Criação dos buckets
+
+```terraform
+
+provider "aws" {
+  region = "us-west-2"
+}
+
+# Bucket SAUDE_PROJECT_RAW
+resource "aws_s3_bucket" "saude_project_raw" {
+  bucket = "saude-project-raw"
+
+  tags = {
+    Name           = "SAUDE_PROJECT_RAW"
+    SAUDE_PROJECT  = "true"
+  }
+}
+
+resource "aws_s3_bucket_versioning" "saude_project_raw_versioning" {
+  bucket = aws_s3_bucket.saude_project_raw.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+# Bucket SAUDE_PROJECT_BRONZE
+resource "aws_s3_bucket" "saude_project_bronze" {
+  bucket = "saude-project-bronze"
+
+  tags = {
+    Name           = "SAUDE_PROJECT_BRONZE"
+    SAUDE_PROJECT  = "true"
+  }
+}
+
+resource "aws_s3_bucket_versioning" "saude_project_bronze_versioning" {
+  bucket = aws_s3_bucket.saude_project_bronze.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+# Bucket SAUDE_PROJECT_SILVER
+resource "aws_s3_bucket" "saude_project_silver" {
+  bucket = "saude-project-silver"
+
+  tags = {
+    Name           = "SAUDE_PROJECT_SILVER"
+    SAUDE_PROJECT  = "true"
+  }
+}
+
+resource "aws_s3_bucket_versioning" "saude_project_silver_versioning" {
+  bucket = aws_s3_bucket.saude_project_silver.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+# Bucket SAUDE_PROJECT_GOLD
+resource "aws_s3_bucket" "saude_project_gold" {
+  bucket = "saude-project-gold"
+
+  tags = {
+    Name           = "SAUDE_PROJECT_GOLD"
+    SAUDE_PROJECT  = "true"
+  }
+}
+
+resource "aws_s3_bucket_versioning" "saude_project_gold_versioning" {
+  bucket = aws_s3_bucket.saude_project_gold.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+```
+
+![Criando os Buckets](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/b1576007-57af-4523-9dfb-872a94953611)
 
 
+![Buckets Criados](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/d7e24874-c921-4cf3-91ed-9db61da9a3e2)
 
+
+![Versionamento e Tags](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/b47ecd16-44fa-4804-be97-2c100fe88cd1)
+
+### Detalhes
+
+Como podem obeervar os buckets forma criados todos ao mesmo tempo em segundos já com as configurações, também poderiam ter sido adicionadas lifecycle rules ou outras configurações da minha escolha, tudo via terraform,
 
 
