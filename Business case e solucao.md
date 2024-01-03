@@ -107,6 +107,7 @@ já existem na AWS e caso sejam alterações o codigo terraform informa essas mo
 
 ![WhatsApp Image 2023-12-18 at 20 02 22](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/8b1863a8-3aca-4304-b7fa-abf1a650b77d)
 
+!Importante: Para não haver conflitos entre os scripts terraform ao executar os comandos, como boas práticas é interessante separar os arquivos terraform em pastas, para que não haja tentativa do terraform de executar tudo novamente se estiver no mesmo diretório.
 
 
 ## Criação de usuário user_aws_governance
