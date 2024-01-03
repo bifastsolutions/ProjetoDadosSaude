@@ -5,13 +5,15 @@
 
 # Descrição
 
-Desenvolvimento de uma solução em dados ponta a ponta para o setor da saúde
-Todos os dados desse projeto são de dominio público.
+Desenvolvimento de uma solução em dados ponta a ponta para o setor da saúde.
+Todas bases de dados desse projeto são de dominio público.
 
 
 # Principais objetivos do projeto
 
 - Automatização
+- Alta disponibilidade
+- Velocidade na disponibilidade dos dados
 - Segurança
 - Economia
 - Resolução de problemas
