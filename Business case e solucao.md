@@ -365,7 +365,15 @@ A primeira linha de comando cria a chave chamada Airbyte_EC2 e o segundo comando
 
 ![Chave criada](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/0fef0d03-88f2-4ca7-b726-84883d45b3ad)
 
+Para mantermos a chave PEM e qualquer outra chave futura em segurança iremos utilizar o serviço da AWS chamada Secrets Manager, o AWS Secrets Manager é um serviço da Amazon Web Services (AWS) projetado para ajudar na gestão segura de informações sensíveis, como chaves de API, senhas, tokens e outras credenciais.
 
+Sua principal vantagem reside na centralização e no gerenciamento seguro dessas informações sensíveis. Ele oferece:
 
+Segurança Aprimorada: O Secrets Manager armazena suas credenciais de forma criptografada, ajudando a protegê-las contra acessos não autorizados.
 
+Rotação Automática de Credenciais: Ele facilita a rotação regular e automática de credenciais, melhorando a segurança ao substituir automaticamente chaves e senhas antigas por novas.
+
+Integração com Serviços AWS: Pode ser integrado de forma nativa com outros serviços AWS, como EC2, RDS, Lambda, entre outros, simplificando o gerenciamento de credenciais nessas plataformas.
+
+Monitoramento e Auditoria: Oferece recursos para monitorar e registrar o acesso e o uso das credenciais, fornecendo trilhas de auditoria para garantir conformidade e segurança.
 
