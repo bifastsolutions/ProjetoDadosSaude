@@ -377,3 +377,24 @@ Integração com Serviços AWS: Pode ser integrado de forma nativa com outros se
 
 Monitoramento e Auditoria: Oferece recursos para monitorar e registrar o acesso e o uso das credenciais, fornecendo trilhas de auditoria para garantir conformidade e segurança.
 
+Para enviarmos nossa chave PEM para o Secrets Manager de forma gerenciável, também utilizaremos o Terraform conforme script abaixo
+
+```terraform
+
+provider "aws" {
+  region = "us-west-2"  # Substitua com a região desejada
+}
+
+resource "aws_secretsmanager_secret" "key_secret" {
+  name = "Airbyte_EC2"
+}
+
+resource "aws_secretsmanager_secret_version" "key_secret_version" {
+  secret_id     = aws_secretsmanager_secret.key_secret.id
+  secret_string = file("C:/Users/Raphael/Airbyte_EC2.pem")
+}
+
+```
+Este script automatiza a criação de um segredo no AWS Secrets Manager chamado "Airbyte_EC2" e carrega uma versão desse segredo com o conteúdo do arquivo PEM fornecido,
+que contem a chave de acesso para acessar a instância EC2 de maneira segura.
+
