@@ -357,11 +357,15 @@ Para que possamos subir nossa instância EC2 com Airbyte com Terraform, alguns c
 
 ### Chave PEM
 
-A chave PEM (Privacy-Enhanced Mail) é usada como uma forma de autenticação para acessar uma instância EC2 na AWS. Ela funciona como uma espécie de "chave digital" que permite o acesso seguro à sua máquina virtual na nuvem. Para criarmos essa chave sem a necessidade de interação com o painel da AWS por meio de comandos, criaremos a chave através do CLI da AWS e teremos o resultado abaixo:
+A chave PEM (Privacy-Enhanced Mail) é usada como uma forma de autenticação para acessar uma instância EC2 na AWS. Ela funciona como uma espécie de "chave digital" que permite o acesso seguro à sua máquina virtual na nuvem. A chave possui criptografia e a conexão é feita via SSH. Para criarmos essa chave sem a necessidade de interação com o painel da AWS por meio de comandos, criaremos a chave através do CLI da AWS e teremos o resultado abaixo:
 
 ![Comandos para a criação da chave PEM](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/d6ae1bea-ae71-44a5-825d-e05f2368d97a)
 
+A primeira linha de comando cria a chave chamada Airbyte_EC2 e o segundo comando garante que somente o usuário que criou a chave terá permissão de leitura.
+
 ![Chave criada](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/0fef0d03-88f2-4ca7-b726-84883d45b3ad)
+
+
 
 
 
