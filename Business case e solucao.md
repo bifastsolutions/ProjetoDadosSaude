@@ -349,4 +349,6 @@ resource "aws_s3_bucket_versioning" "saude_project_gold_versioning" {
 
 Como podem observar os buckets forma criados todos ao mesmo tempo em segundos já com as configurações, também poderiam ter sido adicionadas lifecycle rules ou outras configurações da minha escolha, tudo via terraform.
 
+## Airbyte
 
+A princípio a intenção era utilizar o airbyte no serviço da AWS ECS que já é voltada para containers docker, mas devido a limitação do próprio Airbyte de acordo com a documentação deles o Airbyte até a data presente desse projeto dez.2023 a fev.2024 não era possível. Porém como solução com preço acessível utilizando também serviços da AWS, o airbyte será instalado em uma instancia EC2 com docker que terá sua programação de liga e desliga da instancia somente para o momento de utilização da mesma, economizando muito em comparação se a instancia ficasse ligada 24h por dia.
