@@ -352,3 +352,16 @@ Como podem observar os buckets forma criados todos ao mesmo tempo em segundos j�
 ## Airbyte
 
 A princípio a intenção era utilizar o airbyte no serviço da AWS ECS que já é voltada para containers docker, mas devido a limitação do próprio Airbyte de acordo com a documentação deles o Airbyte até a data presente desse projeto dez.2023 a fev.2024 não era possível. Porém como solução com preço acessível utilizando também serviços da AWS, o airbyte será instalado em uma instancia EC2 com docker que terá sua programação de liga e desliga da instancia somente para o momento de utilização da mesma, economizando muito em comparação se a instancia ficasse ligada 24h por dia.
+
+Para que possamos subir nossa instância EC2 com Airbyte com Terraform, alguns componentes precisam ser criados antes, pois fazem parte dos recuros do script terraform da instância.
+
+### Chave PEM
+
+A chave PEM (Privacy-Enhanced Mail) é usada como uma forma de autenticação para acessar uma instância EC2 na AWS. Ela funciona como uma espécie de "chave digital" que permite o acesso seguro à sua máquina virtual na nuvem. Para criarmos essa chave sem a necessidade de interação com o painel da AWS por meio de comandos, criaremos a chave através do CLI da AWS e teremos o resultado abaixo:
+
+![Comandos para a criação da chave PEM](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/d6ae1bea-ae71-44a5-825d-e05f2368d97a)
+
+![Chave criada](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/0fef0d03-88f2-4ca7-b726-84883d45b3ad)
+
+
+
