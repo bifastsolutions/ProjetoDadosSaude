@@ -398,3 +398,58 @@ resource "aws_secretsmanager_secret_version" "key_secret_version" {
 Este script automatiza a criação de um segredo no AWS Secrets Manager chamado "Airbyte_EC2" e carrega uma versão desse segredo com o conteúdo do arquivo PEM fornecido,
 que contem a chave de acesso para acessar a instância EC2 de maneira segura.
 
+Além disso precisamos também criar um security group, s grupos de segurança (security groups) são uma parte fundamental da infraestrutura de segurança na Amazon Web Services (AWS) funcionam como um firewall. Eles desempenham um papel crucial na proteção das instâncias e recursos na nuvem, controlando o tráfego de entrada e saída para esses recursos. Para a criação desse também usaremos o terraform, no exemplo abaixo
+deixamos o trafego livre ("0.0.0.0/0") para qualquer IP, porem como boas práticas defina exatamente quais IPs estarão autorizados a entrada e a saída.
+
+```terraform
+
+provider "aws" {
+  region = "us-west-2"
+  alias  = "security_group"
+}
+resource "aws_security_group" "airbyte_security_group" {
+  name        = "airbyte"  # Substitua com o nome desejado para o grupo
+  description = "security group sera utilizado na instancia do Airbyte com Docker"
+
+  ingress {
+    from_port   = 22   # Define a porta de origem para entrada (neste caso, porta 22)
+    to_port     = 22   # Define a porta de destino para entrada (neste caso, porta 22)
+    protocol    = "tcp"  # Define o protocolo (neste caso, TCP)
+    cidr_blocks = ["0.0.0.0/0"]  # Permitir tráfego HTTP de qualquer lugar (altere para seu IP)
+  }
+
+  egress {
+    from_port   = 0    # Define a porta de origem para saída (qualquer porta)
+    to_port     = 0    # Define a porta de destino para saída (qualquer porta)
+    protocol    = "-1"  # Define o protocolo para todos os protocolos (qualquer protocolo)
+    cidr_blocks = ["0.0.0.0/0"]  # Permitir todo o tráfego de saída (altere para seu IP)
+  }
+}
+
+```
+
+Após a criação dos recursos necessários, podemos criar a nossa instância com o terraform
+
+```terraform
+
+provider "aws" {
+  region = "us-west-2" # Substitua com a região desejada
+  alias = "airbyte"  
+}
+
+resource "aws_instance" "ec2_instance" {
+  ami           = "ami-00b8917ae86a424c9"  # Substitua com a AMI desejada
+  instance_type = "t2.medium"  # Substitua com o tipo de instância desejado
+  key_name      = "Airbyte_EC2"  # Substitua com o nome do seu keypair
+
+  tags = {
+    Name = "SAUDE_PROJECT"  # Substitua com o nome desejado
+  }
+
+}
+
+output "public_ip" {
+  value = aws_instance.ec2_instance.public_ip
+}
+
+```
