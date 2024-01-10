@@ -443,7 +443,7 @@ resource "aws_instance" "ec2_instance" {
   key_name      = "Airbyte_EC2"  # Substitua com o nome do seu keypair
 
   tags = {
-    Name = "SAUDE_PROJECT"  # Substitua com o nome desejado
+    Name = "airbyte_saude_project"  # Substitua com o nome desejado (nome da instância)
   }
 
 }
