@@ -115,7 +115,7 @@ já existem na AWS e caso sejam alterações o codigo terraform informa essas mo
 ```terraform
 
 provider "aws" {
-  region = "us-west-2" 
+  region = "us-east-1" 
 }
 
 resource "aws_iam_user" "user_aws_governance" {
@@ -227,7 +227,7 @@ resource "aws_iam_user_policy_attachment" "attachment_aws_governance" {
 
 ### Detalhes
 
-provider "aws" { region = "us-west-2" }: Esta linha define o provedor que o Terraform usará para interagir com a AWS, indicando a região onde os recursos serão criados.
+provider "aws" { region = "us-east-1" }: Esta linha define o provedor que o Terraform usará para interagir com a AWS, indicando a região onde os recursos serão criados.
 
 resource "aws_iam_user" "user_aws_governance" { name = "user_aws_governance" }: Aqui, um recurso do tipo aws_iam_user é criado. Ele representa um usuário no IAM (Identity and Access Management) da AWS, com o nome "user_aws_governance".
 
@@ -262,7 +262,7 @@ resource "aws_iam_user_policy_attachment" "attachment_aws_governance" { ... }: P
 ```terraform
 
 provider "aws" {
-  region = "us-west-2"
+  region = "us-east-1"
 }
 
 # Bucket SAUDE_PROJECT_RAW
@@ -382,7 +382,7 @@ Para enviarmos nossa chave PEM para o Secrets Manager de forma gerenciável, tam
 ```terraform
 
 provider "aws" {
-  region = "us-west-2"  # Substitua com a região desejada
+  region = "us-east-1"  # Substitua com a região desejada
 }
 
 resource "aws_secretsmanager_secret" "key_secret" {
@@ -404,7 +404,7 @@ deixamos o trafego livre ("0.0.0.0/0") para qualquer IP, porem como boas prátic
 ```terraform
 
 provider "aws" {
-  region = "us-west-2"
+  region = "us-east-1"
   alias  = "security_group"
 }
 resource "aws_security_group" "airbyte_security_group" {
@@ -433,7 +433,7 @@ Após a criação dos recursos necessários, podemos criar a nossa instância co
 ```terraform
 
 provider "aws" {
-  region = "us-west-2" # Substitua com a região desejada
+  region = "us-east-1" # Substitua com a região desejada
   alias = "airbyte"  
 }
 
@@ -453,3 +453,7 @@ output "public_ip" {
 }
 
 ```
+
+
+
+
