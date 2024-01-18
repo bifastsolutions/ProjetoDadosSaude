@@ -455,5 +455,18 @@ output "public_ip" {
 ```
 
 
+Após criar a instância e ela estar ativa para uso como na imagem abaixo, iremos realizar a instalação do docker e em seguida do Airbyte conforme a documentação oficial do Airbyte em https://docs.airbyte.com/deploying-airbyte/on-aws-ec2
+
+![Instância em funcionamento](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/261a2d86-94ac-4168-aa5f-fa012040c849)
+
+![Instalação Docker](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/bc3dbf66-9e4e-469e-a246-57d297191665)
+
+![Instalação Docker Compose](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/f273ea63-1c4c-459c-8931-7ef75be8698a)
+
+![Instalação Airbyte](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/9aea22d8-c0e1-41ac-b955-38aa150c4086)
+
+
+
+
 
 
