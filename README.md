@@ -29,12 +29,13 @@ Todas bases de dados desse projeto são de dominio público.
 - Figma
 - Docker
 - AWS
-  - Glue
   - S3
   - Redshift
   - IAM
   - EC2
   - Event Bridge
+  - Secret Manager
+  - ECS
 - Airbyte
 - Databricks
   - Unity Catalog
