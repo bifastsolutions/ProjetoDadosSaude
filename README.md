@@ -20,3 +20,26 @@ Todas bases de dados desse projeto são de dominio público.
 - Entrega de valor
 - Agilidade na tomada de decisão
 - Dados de qualidade
+
+# Tecnologias utilizadas
+
+- VS Code
+- Terraform
+- Power BI
+- Figma
+- Docker
+- AWS
+  - Glue
+  - S3
+  - Redshift
+  - IAM
+  - EC2
+  - Event Bridge
+- Airbyte
+- Databricks
+  - Unity Catalog
+- Spark
+- Gitlab
+- Airflow
+- SQL 
+- Jira
