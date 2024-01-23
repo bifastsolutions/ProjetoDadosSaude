@@ -349,7 +349,7 @@ resource "aws_s3_bucket_versioning" "saude_project_gold_versioning" {
 
 Como podem observar os buckets forma criados todos ao mesmo tempo em segundos já com as configurações, também poderiam ter sido adicionadas lifecycle rules ou outras configurações da minha escolha, tudo via terraform.
 
-## Airbyte
+## EC2 AWS
 
 A princípio a intenção era utilizar o airbyte no serviço da AWS ECS que já é voltada para containers docker, mas devido a limitação do próprio Airbyte de acordo com a documentação deles o Airbyte até a data presente desse projeto dez.2023 a fev.2024 não era possível. Porém como solução com preço acessível utilizando também serviços da AWS, o airbyte será instalado em uma instancia EC2 com docker que terá sua programação de liga e desliga da instancia somente para o momento de utilização da mesma, economizando muito em comparação se a instancia ficasse ligada 24h por dia.
 
@@ -461,12 +461,13 @@ Após criar a instância e ela estar ativa para uso como na imagem abaixo, iremo
 
 ![Instalação Docker](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/bc3dbf66-9e4e-469e-a246-57d297191665)
 
-![Instalação Docker Compose](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/f273ea63-1c4c-459c-8931-7ef75be8698a)
+![Instalação Airbyte](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/3ae48a8f-c803-41ec-ac80-7b807474c6ef)
 
-![Instalação Airbyte](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/9aea22d8-c0e1-41ac-b955-38aa150c4086)
+![Airbyte start](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/9b984d90-9037-454e-805a-820750ca4e7f)
 
+## Airbyte
 
-
+![WhatsApp Image 2024-01-23 at 07 56 58](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/7252f6a6-65cd-4021-8013-06083af140ba)
 
 
 
