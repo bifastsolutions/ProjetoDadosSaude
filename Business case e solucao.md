@@ -471,9 +471,9 @@ Após criar a instância e ela estar ativa para uso como na imagem abaixo, iremo
 
 Foram configuradas 3 conexões no airbyte
 
-Google Drive(fonte) - AWS S3(Destino)
-AWS RDS(fonte) - AWS S3(Destino)
-API(Fonte) - AWS S3(Destino)
+- Google Drive(fonte) - AWS S3(Destino)
+- SQL Server(fonte) - AWS S3(Destino)
+- API(Fonte) - AWS S3(Destino)
 
 
 
