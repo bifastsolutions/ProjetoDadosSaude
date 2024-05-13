@@ -477,4 +477,22 @@ Foram configuradas 3 conexões no airbyte
 
 
 
+# Jira
+
+O JIRA é uma ferramenta de gerenciamento de projetos e rastreamento de problemas, amplamente utilizada em ambientes de desenvolvimento ágil. Para projetos de business intelligence (BI) e Dados em geral.
+
+Suas 3 principais vantagens são:
+
+Organização e Prioridade: Ajuda a organizar tarefas e priorizar o trabalho com facilidade.
+Transparência: Proporciona visibilidade sobre o progresso do projeto e o status das tarefas.
+Colaboração: Facilita a comunicação e colaboração entre as equipes, integrando diferentes funções.
+
+
+
+![Timeline](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/fa4e2705-b798-4c11-bc67-3045a461f410)
+![Board](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/c0f8b70a-dbd5-45ae-b74d-4be115424b0f)
+![Summary](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/5c59a886-7a13-4d4d-8476-090534c2c21c)
+
+
+
 
