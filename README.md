@@ -6,7 +6,7 @@
 # Descrição
 
 Desenvolvimento de uma solução em dados ponta a ponta para o setor da saúde.
-Todas bases de dados desse projeto são de dominio público.
+Todas as bases de dados desse projeto são de dominio público.
 
 
 # Principais objetivos do projeto
