@@ -43,7 +43,7 @@ em diferentes estados prejudica a capacidade da empresa de responder eficazmente
 
 # Resumo Arquitetura e pipeline de dados
 
-![Arquitetura Projeto Databricks - Saúde](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/eae03d14-4360-4f29-885e-c0b8ed1ff96a)
+![Arquitetura Projeto](https://github.com/bifastsolutions/ProjetoDadosSaude/assets/134235178/e99128cb-606f-4166-ac9e-8cccd3bfe1c4)
 
 # Git e Gitlab
 
