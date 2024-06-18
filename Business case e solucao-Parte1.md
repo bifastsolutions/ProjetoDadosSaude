@@ -469,10 +469,9 @@ Após criar a instância e ela estar ativa para uso como na imagem abaixo, iremo
 
 ![WhatsApp Image 2024-01-23 at 07 56 58](https://github.com/bifastsolutions/DatabricksAWS/assets/134235178/7252f6a6-65cd-4021-8013-06083af140ba)
 
-Foram configuradas 3 conexões no airbyte
+Foram configuradas 2 conexões no airbyte
 
 - Google Drive(fonte) - AWS S3(Destino)
-- SQL Server(fonte) - AWS S3(Destino)
 - API(Fonte) - AWS S3(Destino)
 
 
